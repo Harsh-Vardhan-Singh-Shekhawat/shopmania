@@ -24,3 +24,9 @@ div{
     width: auto;
     height: 100px;
 }
+a{    /* not working */
+    text-decoration: none;
+}
+h1{   /* not working */
+    text-decoration:none;
+}
