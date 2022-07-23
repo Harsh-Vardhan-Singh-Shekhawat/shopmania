@@ -1,4 +1,8 @@
 <?php
+
+    start_session();
+    $_SESSION['login_status'] = 'failed';
+
     $uname = $_POST['uname'];
     $pass = $_POST['pass'];
 
@@ -12,14 +16,15 @@
         echo "<h1>User doesn't exist!<br></h1>
         <a href='login.html'>Go To Login Page</a>
         ";
+        $_SESSION['login_status'] = 'failed';
         die;
     }
-    else if($row_count==1){
-        // link to Home Page of website
-        
-        echo "<h1>Login Success! <h1/>";
-        die;
-    }
+    
+    // link to Home Page of website
+    $_SESSION['login_status'] = 'success';
+    echo "<h1>Login Success! <h1/>";
+    header('location:home.php');    
+    
     
 ?>
 <!-- 
